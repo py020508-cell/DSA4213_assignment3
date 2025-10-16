@@ -8,5 +8,4 @@ echo ">>> LoRA 微调"
 python -m src.lora_train
 echo ">>> 评估 & 画图"
 python -m src.model_evaluate
-python -m src.time_evaluate
 python -m src.error_analysis
