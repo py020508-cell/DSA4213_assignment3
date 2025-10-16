@@ -1,0 +1,29 @@
+[
+  {
+    "id": 32,
+    "text": "I'm the type of guy who loves hood movies from New Jack City to Baby Boy to Killa Season, from the b grade to the Hollywood. but this movie was something different. i am no hater and this movie was kinda enjoyable. but some bits were just weird. well the acting wasn't to good, compared to Silkk The Shockers performance in Hot Boyz (quite good) and Ice-T in new Jack and SVU (great). the scene where",
+    "true_label": 0,
+    "full_pred": 0,
+    "lora_pred": 1,
+    "full_prob": 0.8751198053359985,
+    "lora_prob": 0.8306272029876709
+  },
+  {
+    "id": 122,
+    "text": "I wish I knew what to make of a movie like this. It seems to be divided into two parts -- action sequences and personal dramas ashore. It follows Ashton Kutsher through survival swimmer school, guided by Master Chief Kevin Costner, then to Alaska where a couple of spectacular rescues take place, the last resulting in death.<br /><br />I must say that the scenes on the beach struck me as so stereot",
+    "true_label": 0,
+    "full_pred": 0,
+    "lora_pred": 1,
+    "full_prob": 0.9219661951065063,
+    "lora_prob": 0.5301934480667114
+  },
+  {
+    "id": 132,
+    "text": "This movie should have been billed as three movie-summaries linked together to form a full-length feature film (including lots of shots of people slowly walking down dark corridors and streets). BE WARNED! The first hour of this movie is simply a re-hash of the first two Aztec movies as told by the main character. The actual movie doesn't start until the thing is almost over. I must say, the overa",
+    "true_label": 0,
+    "full_pred": 0,
+    "lora_pred": 1,
+    "full_prob": 0.8723270893096924,
+    "lora_prob": 0.8414240479469299
+  }
+]

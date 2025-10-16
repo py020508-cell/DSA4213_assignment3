@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1991,
+    "text": "So after the initial disappointment of the first Final Fantasy movie, which seemed to bare next to no resemblance to the Final Fantasy series, Final Fantasy: Advent Children has released itself to a warm reception and, now, a dedicated fanbase. And the reason for the films success is understandable as it has lush graphics, fast moving fight sequences and some cool as hell characters. However, if y",
+    "true_label": 0,
+    "full_pred": 1,
+    "lora_pred": 0,
+    "full_prob": 0.7534490823745728,
+    "lora_prob": 0.8532378673553467
+  },
+  {
+    "id": 3436,
+    "text": "I must, in light of the encomia of praise for this flick from viewers, assume once again the role of the turd in the punchbowl, as Lowell Weicker used to say, I am scratching my head at the sheer number of laudatory comments. \"The African Queen\" this ain't. The period flavor is wonderful, yes. The acting is fine, but no actor no matter how great can bring life to the seemingly endless stream of pe",
+    "true_label": 0,
+    "full_pred": 1,
+    "lora_pred": 0,
+    "full_prob": 0.5969349145889282,
+    "lora_prob": 0.8584901690483093
+  },
+  {
+    "id": 7894,
+    "text": "Perhaps the director was trying for another PIRATE (Good Garland and Kelly musical) -- but this lame musical epoch falls flat. Sinatra and Kathryn Graysons voices do not blend well -- and their chemistry together lacks spark. The premise of Sinatra as a sweet guy who tries to impersonate his late \"bandito\" father is okay, but he seems awkward in the role. What's amazing and wonderful here, is how ",
+    "true_label": 0,
+    "full_pred": 1,
+    "lora_pred": 0,
+    "full_prob": 0.5909750461578369,
+    "lora_prob": 0.9091717600822449
+  }
+]

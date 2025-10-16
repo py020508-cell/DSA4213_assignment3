@@ -1,0 +1,23 @@
+# 模型权重 & 二进制
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 训练日志（可选，不想传就忽略）
+result/full/logs/
+result/full/checkpoint*/
+result/LORA/logs/
+result/LORA/checkpoint*/
+
+# 本地临时目录
+tmp/
