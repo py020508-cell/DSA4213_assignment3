@@ -7,6 +7,5 @@ echo >>> LoRA 微调
 python -m src.lora_train
 echo >>> 评估 & 画图
 python -m src.model_evaluate
-python -m src.time_evaluate
 python -m src.error_analysis
-echo >>> 完成！结果在
+echo >>> 完成！结果在结果在 result/ 目录
