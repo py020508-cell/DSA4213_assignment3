@@ -24,12 +24,12 @@ def main():
     model = get_peft_model(base, lora_cfg)
     model.print_trainable_parameters()
 
-    # 1. 统一根目录 ../result
+
     out_root = "../result/LORA"
     os.makedirs(out_root, exist_ok=True)
 
     args = TrainingArguments(
-        output_dir=out_root,              #  checkpoint & logs 全放这里
+        output_dir=out_root,           
         learning_rate=2e-4,
         per_device_train_batch_size=16,
         per_device_eval_batch_size=16,
@@ -53,11 +53,11 @@ def main():
     metrics = trainer.evaluate()
     print(metrics)
 
-    # 2. 指标落盘：../result/lora_metrics.json
+
     with open(os.path.join(out_root, "lora_metrics.json"), "w") as f:
         json.dump(metrics, f, indent=2)
 
-    # 3. 最终模型：../result/checkpoint  （与 full 同一个目录，不会冲突）
+    # save as：../result/checkpoint
     trainer.save_model(os.path.join(out_root, "checkpoint"))
 
 if __name__ == "__main__":
