@@ -5,9 +5,9 @@ import numpy as np
 
 
 def read_metrics(trainer_state_path):
-    """读取 trainer_state.json 中每个 epoch 的 eval_accuracy 和 eval_f1"""
+
     if not os.path.exists(trainer_state_path):
-        raise FileNotFoundError(f"{trainer_state_path} 不存在！")
+        raise FileNotFoundError(f"{trainer_state_path} does not exist！")
 
     with open(trainer_state_path, "r") as f:
         trainer_state = json.load(f)
@@ -31,12 +31,12 @@ def main():
     full_train_path = "../result/full/checkpoint-4689/trainer_state.json"
     lora_train_path = "../result/LORA/checkpoint-4689/trainer_state.json"
 
-    # 读取 Full 和 LoRA
+    # get Full 和 LoRA
     epochs_full, acc_full, f1_full = read_metrics(full_train_path)
     epochs_lora, acc_lora, f1_lora = read_metrics(lora_train_path)
 
-    # 给曲线加纵向微小偏移，让它们分开显示
-    offset = 0.01  # 可以根据需要调整
+    # Separate display curves
+    offset = 0.01  
     acc_full_plot = np.array(acc_full) + offset
     f1_full_plot  = np.array(f1_full) - offset
     acc_lora_plot = np.array(acc_lora) + 2*offset
@@ -44,7 +44,7 @@ def main():
 
     plt.figure(figsize=(7, 5))
 
-    # Full 模型
+    # Draw a line chart
     plt.plot(epochs_full, acc_full, marker='o', color='mediumorchid', linestyle='-', label='Full Accuracy')
     plt.plot(epochs_full, f1_full, marker='s', color='mediumorchid', linestyle='--', label='Full F1')
     plt.plot(epochs_lora, acc_lora, marker='o', color='pink', linestyle='-', label='LoRA Accuracy')
@@ -55,13 +55,13 @@ def main():
     plt.ylabel("Score")
     plt.title("Figure2 Full vs LoRA Evaluation per Epoch")
 
-    # y轴自适应，增加一点边距
+    
     all_scores = np.concatenate([acc_full_plot, f1_full_plot, acc_lora_plot, f1_lora_plot])
     plt.ylim(all_scores.min() - 0.01, all_scores.max() + 0.01)
 
     plt.grid(True, linestyle='--', alpha=0.5)
 
-    # 数值标签
+    # Add value labels
     for x, y in zip(epochs_full, acc_full): plt.text(x, y, f'{y:.3f}', ha='center', va='center', fontsize=7,
                                                      color='black')
     for x, y in zip(epochs_full, f1_full):  plt.text(x, y, f'{y:.3f}', ha='center', va='center', fontsize=7,
@@ -73,11 +73,11 @@ def main():
     plt.legend()
     plt.tight_layout()
 
-    # 保存图片
+    # save the image
     save_path = "../result/full_lora_compare.png"
     plt.savefig(save_path, dpi=300)
     plt.close()
-    print(f"对比折线图已保存：{save_path}")
+    print("have done")
 
 
 if __name__ == "__main__":
