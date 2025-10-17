@@ -3,7 +3,7 @@ import json, torch, numpy as np
 from datasets import load_dataset
 from transformers import AutoModelForSequenceClassification, Trainer, DataCollatorWithPadding
 from peft import PeftModel
-from data import TOKENIZER, build_tokenized   # 你的 tokenizer 与 tokenize 函数
+from data import TOKENIZER, build_tokenized  
 
 def load_full_model():
     return AutoModelForSequenceClassification.from_pretrained("../result/full/checkpoint")
@@ -44,15 +44,15 @@ def main():
     full_preds, full_probs = predict(load_full_model(), test_ds)
     lora_preds, lora_probs = predict(load_lora_model(), test_ds)
 
-    # ① LoRA 错 & Full 对
+    #  Full right & LoRA wrong
     mask_lw = (lora_preds != labels) & (full_preds == labels) & (full_probs.max(1) > 0.85)
-    # ② Full 错 & LoRA 对
+    # Full wrong & LoRA right
     mask_fw = (full_preds != labels) & (lora_preds == labels) & (lora_probs.max(1) > 0.85)
 
     save_cases(np.where(mask_lw)[0], "error_lora_wrong", labels, full_preds, full_probs, lora_preds, lora_probs, test_ds)
     save_cases(np.where(mask_fw)[0], "error_full_wrong", labels, full_preds, full_probs, lora_preds, lora_probs, test_ds)
 
-    print("已导出 error_lora_wrong.json 与 error_full_wrong.json 各 3 条")
+    print("done")
 
 if __name__ == "__main__":
     main()
