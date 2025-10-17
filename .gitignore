@@ -1,11 +1,11 @@
-# 模型权重 & 二进制
+# Model weights & binaries
 *.bin
 *.pt
 *.pth
 *.safetensors
 *.ckpt
 
-# Python 缓存
+# Python cache
 __pycache__/
 *.py[cod]
 *$py.class
@@ -13,11 +13,11 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# 训练日志（可选，不想传就忽略）
+# Training logs (optional, ignore if not needed)
 result/full/logs/
 result/full/checkpoint*/
 result/LORA/logs/
 result/LORA/checkpoint*/
 
-# 本地临时目录
+# Local temporary directories
 tmp/
