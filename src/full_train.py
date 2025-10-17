@@ -10,7 +10,7 @@ from transformers import (
 from data import TOKENIZER, build_tokenized
 import evaluate
 
-# ---------- 工具 ----------
+#conmpute accuracy and f1
 def comp_metrics(eval_pred):
     acc = evaluate.load("accuracy")
     f1 = evaluate.load("f1")
@@ -21,11 +21,11 @@ def comp_metrics(eval_pred):
     f1 = f1.compute(predictions=preds, references=labels)["f1"]
     return {"accuracy": accuracy, "f1": f1}
 
-# ---------- 训练 ----------
+# train
 def main():
     train, test = build_tokenized()
 
-    # 1. 输出根目录：../result
+
     out_root = "../result/full"
     os.makedirs(out_root, exist_ok=True)
 
@@ -34,7 +34,7 @@ def main():
     )
 
     args = TrainingArguments(
-        output_dir=out_root,              # 模型、checkpoint、日志全放这里
+        output_dir=out_root,         
         eval_strategy="epoch",
         save_strategy="epoch",
         learning_rate=2e-5,
@@ -60,11 +60,11 @@ def main():
     metrics = trainer.evaluate()
     print(metrics)
 
-    # 2. 指标统一落盘：../result/full_metrics.json
+    # 2. put result to ../result/full_metrics.json
     with open(os.path.join(out_root, "full_metrics.json"), "w") as f:
         json.dump(metrics, f, indent=2)
 
-    # 3. 最终最佳模型保存：../result/checkpoint
+    # 3. Save in：../result/checkpoint
     trainer.save_model(os.path.join(out_root, "checkpoint"))
 
 if __name__ == "__main__":
